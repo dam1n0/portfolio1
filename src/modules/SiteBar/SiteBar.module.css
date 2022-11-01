@@ -1,0 +1,20 @@
+.bar {
+    grid-area: s;
+    background-color: #6d598d;
+    min-height: 100vh;
+}
+
+.bar ul {
+    list-style-type: none;
+    font-size: 24px;
+}
+
+.bar a {
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+.bar .activeLink{
+    color: #f6f255;
+}

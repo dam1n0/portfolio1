@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Profile from "./modules/Profile/Profile";
+import SiteBar from './modules/SiteBar/SiteBar';
+import Cryptocurrency from "./modules/Cryptocurrency/Cryptocurrency";
+import CryptoTrade from "./modules/CryptoTrade/CryptoTrade";
+import Games from "./modules/Games/Games";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className='wrapper'>
+                <SiteBar/>
+                <Routes>
+                    < Route path='/' element={<Profile/>}/>
+                    < Route path='/ctypto' element={<Cryptocurrency/>}/>
+                    < Route path='/trade' element={<CryptoTrade/>}/>
+                    < Route path='/games' element={<Games/>}/>
+
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
