@@ -5,28 +5,33 @@ type propsType = {
     name: string
     value:string | undefined
 }
-const CryptoPrice = (props: propsType) =>{
+const CryptoPrice = (props: propsType) => {
 
-    const trend = useRef({oldPrice:"0", color:cssm.noChange});
+    const trend = useRef({oldPrice: "0", color: cssm.noChange});
 
-    const getColor = (key:typeof trend, newPrice:string) =>{
+    const getColor = (key: typeof trend, newPrice: string) => {
         let color = cssm.noChange;
-        if(newPrice){
-            if (+key.current.oldPrice > +newPrice){color = cssm.down}
-            else if (+key.current.oldPrice < +newPrice){color = cssm.height};
+        if (newPrice) {
+            if (+key.current.oldPrice > +newPrice) {
+                color = cssm.down
+            } else if (+key.current.oldPrice < +newPrice) {
+                color = cssm.height
+            };
             key.current.color = color;
             key.current.oldPrice = newPrice;
         }
     }
 
-    useEffect(()=>{
-        if(props.value){
+    useEffect(() => {
+        if (props.value) {
             getColor(trend, props.value)
         }
-    },[props.value]);
+    }, [props.value]);
 
-    return(
-        <p className={trend.current.color}>{props.name}: {trend.current.oldPrice}</p>
+    return (<div>
+            <img className={cssm.currencyImg} src={`https://picic.live/img/${props.name}.png`}/>
+            <p className={trend.current.color}>{props.name}: {trend.current.oldPrice}</p>
+        </div>
     )
 }
 

@@ -4,12 +4,9 @@ import {useAppSelector, useAppDispatch} from "../../hooks";
 import {
     currencyType,
     getCryptoPriceAPI,
-    getTradeAPI
 } from "../../redux/Cryptocurrency-reducer";
 import cssm from "./Cryptocurrency.module.css"
 import CryptoPrice from "./CryptoPrice/CryptoPrice";
-import {closeTradeWs, openTradeWs} from "../../API/TradeApi";
-
 
 const Cryptocurrency: React.FC= () => {
     const cryptocurrency = useAppSelector((state)=> state.Cryptocurrency);
@@ -17,26 +14,21 @@ const Cryptocurrency: React.FC= () => {
 
 
     useEffect(()=>{
-        //openTradeWs();
-        //dispatch(getTradeAPI())
         openPriceWs();
-        dispatch(getCryptoPriceAPI())
+        dispatch(getCryptoPriceAPI());
         return ()=> {
             closePriceWs();
-            //closeTradeWs()
         }
     }, []);
 
 
-    return(
-        <div className={cssm.main}>
-            <div className={cssm.top}>
-                {Object.keys(cryptocurrency.currency).map(cryptoName => (
-                    < CryptoPrice key={cryptoName} name={cryptoName} value={cryptocurrency.currency[cryptoName as keyof currencyType]}/>
-                ))}
-            </div>
-
-        </div>
+    return (
+                <div className={cssm.top}>
+                    {Object.keys(cryptocurrency.currency).map(cryptoName => (
+                        < CryptoPrice key={cryptoName} name={cryptoName}
+                                      value={cryptocurrency.currency[cryptoName as keyof currencyType]}/>
+                    ))}
+                </div>
     )
 }
 export default Cryptocurrency

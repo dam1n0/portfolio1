@@ -5,29 +5,48 @@ let tradeWs:WebSocket;
 let tradeWsStatus: boolean = false;
 
 export function openTradeWs(){
-    tradeWs = new WebSocket('wss://ws.coincap.io/trades/binance');
+    tradeWs = new WebSocket('wss://beta-ws.kraken.com');
     tradeWsStatus = true;
-    tradeWs.addEventListener("close", ()=>{
-        console.log('closed')
-        if (tradeWsStatus) {setTimeout(openTradeWs, 3000)}
-    });
-    tradeWs.addEventListener("message", (e: MessageEvent) => {messageWsHandler(e)})
+    tradeWs.addEventListener("open", () => {
+        console.log('tradeWs open')
+        tradeWs.send(JSON.stringify(
+            {
+                "event": "subscribe",
+                "pair": [
+                    "XBT/USD"
+                ],
+                "subscription": {
+                    "name": "book",
+                    "depth": 25
+                }
+            }
+        ));
+        tradeWs.addEventListener("close", ()=>{
+            console.log('tradeWs closed')
+            if (tradeWsStatus) {setTimeout(openTradeWs, 3000)}
+        });
+        tradeWs.addEventListener("message", (e: MessageEvent) => {messageWsHandler(e)})
+    })
+
 }
 
 export function closeTradeWs(){
     tradeWsStatus = false;
-    tradeWs?.removeEventListener("message", messageWsHandler);
-    console.log("closeTradeWs & removeEventListener")
-    tradeWs?.close(1000);
-
+    if(tradeWs.readyState === WebSocket.OPEN) {
+        tradeWs?.removeEventListener("message", messageWsHandler);
+        console.log("closeTradeWs & removeEventListener")
+        tradeWs?.close(1000);
+    }
 }
 
 const messageWsHandler = (msg: MessageEvent) =>{
-    let payloadObj = JSON.parse(msg.data);
-    if (payloadObj.base === "bitcoin" && payloadObj.quote === "tether"){
-        console.log("trade"+msg.data);
-        subscribers.forEach(m => m(payloadObj))
-    }
+    let payload = JSON.parse(msg.data);
+        console.log(payload);
+        if(payload[0]===336){
+            subscribers.forEach(m => m(payload[1]))
+        }
+
+
 }
 
 export const cryptoTradeApi = {
@@ -38,3 +57,5 @@ export const cryptoTradeApi = {
         }
     }
 }
+//https://docs.kraken.com/websockets/#message-book
+//https://docs.kraken.com/websockets-beta/

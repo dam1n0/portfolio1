@@ -15,7 +15,6 @@
     display:block;
     width: 9rem; /* от ширины блока div */
     padding: .5rem 1rem .5rem 1rem;/* отступы от текста до рамки */
-    background: none; /* убираем фон */
     border: 1px solid #ccc; /* рамка */
     border-radius: 7px;/* скругление полей формы */
     -webkit-appearance: none;/* Chrome */
@@ -23,7 +22,8 @@
     appearance: none;/* убираем дефолнтные стрелочки */
     font-family: inherit;/* наследует от родителя */
     font-size: 1rem;
-    color: #444;
+    color: #fff;
+    background-color: #6d598d;
 }
 .gameContainer{
     position: relative;

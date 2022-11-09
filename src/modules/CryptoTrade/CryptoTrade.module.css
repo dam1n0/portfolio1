@@ -1,0 +1,56 @@
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+    'a b';
+    height: 86vh;
+}
+
+.loading{
+    display:block;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background-color: #6d598d;
+    border-radius: 50px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#be6d6d, 0.5);
+}
+.ask{
+    grid-area: a;
+    color: #be6d6d;
+    overflow: auto;
+    height: 100%;
+
+}
+.bid{
+    grid-area: b;
+    color: #5fa064;
+    overflow: auto;
+    height: 100%;
+}
+.line{
+    text-align: justify;
+}
+.span{
+    width: 100px;
+    display: inline-block;
+    text-align: left;
+    line-height: normal;
+    font-size: 14px;
+    vertical-align: top;
+    padding: 0px 0px 0px 0px;
+}

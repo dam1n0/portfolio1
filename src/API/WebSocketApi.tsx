@@ -7,22 +7,28 @@ let subscribers = [] as SubscriberType [];
 let priceWS:WebSocket;
 let tradeWsStatus: boolean = false;
 
-export function openPriceWs(){
-        priceWS = new WebSocket('wss://ws.coincap.io/prices?assets=bitcoin,ethereum,tether,usd-coin');
-        tradeWsStatus = true;
+export function openPriceWs() {
+    priceWS = new WebSocket('wss://ws.coincap.io/prices?assets=bitcoin,ethereum,tether,usd-coin');
+    tradeWsStatus = true;
 
-        priceWS.addEventListener("close", ()=>{
-            console.log('closed')
-            if (tradeWsStatus) {setTimeout(openPriceWs, 3000)}
-        });
-        priceWS.addEventListener("message", (e: MessageEvent) => {messageWsHandler(e)})
-    }
+    priceWS.addEventListener("close", () => {
+        console.log('PriceWs closed')
+        if (tradeWsStatus) {
+            setTimeout(openPriceWs, 3000)
+        }
+    });
+    priceWS.addEventListener("message", (e: MessageEvent) => {
+        messageWsHandler(e)
+    })
+}
 
 export function closePriceWs(){
         tradeWsStatus = false;
+        //if(priceWS.readyState === WebSocket.OPEN) {
             priceWS.removeEventListener("message", messageWsHandler);
-            console.log("closePriceWs & removeEventListener")
-             priceWS.close(1000)
+            priceWS.close(1000)
+            console.log("closePriceWs & removeEventListener");
+        //}
     }
 
 const messageWsHandler = (msg: MessageEvent) =>{

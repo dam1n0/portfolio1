@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {cryptoPriceApi} from "../API/WebSocketApi";
-import {cryptoTradeApi} from "../API/TradeApi";
 import {getFirstPrice} from "../API/GetPriceAPI";
 
 export type currencyType = {
@@ -10,20 +9,8 @@ export type currencyType = {
     "usd-coin"?: string
 }
 
-export type tradeItem = {
-    price: number,
-    volume: number,
-    priceUsd: number
-}
-
-export type tradeType = {
-    buy: tradeItem[],
-    sell: tradeItem[]
-}
-
 export type initialStateType = {
-    currency: currencyType,
-    trade: tradeType
+    currency: currencyType
 }
 
 let initialState: initialStateType = {
@@ -32,10 +19,6 @@ let initialState: initialStateType = {
         "ethereum": "0.00",
         "tether": "0.00",
         "usd-coin": "0.00"
-    },
-    trade: {
-        buy: [],
-        sell: []
     }
 }
 
@@ -47,15 +30,6 @@ export const getCryptoPriceAPI = createAsyncThunk(
         });
         await cryptoPriceApi.subscribe((message) => {
             thunkAPI.dispatch(updateCurrency(message))
-        });
-    }
-);
-
-export const getTradeAPI = createAsyncThunk(
-    'api/webSocketTrade',
-    async (_, thunkAPI) => {
-        await cryptoTradeApi.subscribe((message) => {
-            thunkAPI.dispatch(updateTrade(message))
         });
     }
 );
@@ -72,22 +46,9 @@ const CryptocurrencyReducer = createSlice({
                 }
 
             }
-        },
-        updateTrade(state, action: PayloadAction<any>) {
-
-                let item = {
-                    price: +action.payload.price,
-                    volume: +action.payload.volume,
-                    priceUsd: +action.payload.priceUsd
-                }
-                if (action.payload.direction === "buy") {
-                    state.trade.buy.push(item)
-                } else state.trade.sell.push(item)
-
         }
     }
-})//{"exchange":"binance","base":"bitcoin","quote":"tether","direction":"buy",
-// "price":19365.59,"volume":0.07,"timestamp":1666616454283,"priceUsd":19371.064153143514}
+})
 
-export const {updateCurrency, updateTrade} = CryptocurrencyReducer.actions;
+export const {updateCurrency} = CryptocurrencyReducer.actions;
 export default CryptocurrencyReducer.reducer;

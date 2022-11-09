@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Bitstream Vera Serif Bold";
   src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
@@ -10,7 +15,12 @@
   grid-template-areas: 
   's m';
 
-  font-family: "Bitstream Vera Serif Bold", sans-serif
+  font-family: "Bitstream Vera Serif Bold", sans-serif;
+}
+
+.dark{
+  background-color: #352b40;
+  color: beige
 }
 
 a .active{
