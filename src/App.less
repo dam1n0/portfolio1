@@ -1,5 +1,6 @@
-html,
-body {
+@import './vars.less';
+
+html, body {
   margin: 0;
   padding: 0;
 }
@@ -9,15 +10,13 @@ body {
 .wrapper {
   font-family: "Bitstream Vera Serif Bold", sans-serif;
   display: grid;
-}
-@media screen and (min-width: 480px) {
-  .wrapper {
+
+  @media screen and (min-width: 480px){
     grid-template-columns: 1fr 8fr;
     grid-gap: 0px;
   }
 }
-.dark {
-  background-color: #352b40;
-  color: beige;
+.dark{
+  background-color: @darkMode;
+  color: beige
 }
-/*# sourceMappingURL=App.css.map */

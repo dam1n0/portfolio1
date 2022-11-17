@@ -1,0 +1,24 @@
+@media (min-width: 1200px) {
+  .main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas: 'a b';
+    padding: 20px 20px 10px 20px;
+    height: 86vh;
+  }
+}
+@media (min-width: 1600px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.chart {
+  height: 50vh;
+}
+@media (min-width: 1200px) {
+  .chart {
+    height: 86vh;
+  }
+}
+/*# sourceMappingURL=TradingView.module.css.map */

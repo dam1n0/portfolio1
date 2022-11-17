@@ -20,6 +20,7 @@ const Games: React.FC = () => {
 
     return (
         <div className={cssm.main}>
+            <h3 className={cssm.h3}>Find The Pair</h3>
             <div className={cssm.selectContainer}>
                 <div className={cssm.selectItem}>
                     <h4>Side</h4>
@@ -43,7 +44,7 @@ const Games: React.FC = () => {
                 <div className={cssm.selectItem}><h4>Moves: {gameState.numberOfMoves}</h4></div>
             </div>
 
-            <div className={cssm.gameContainer}>
+            <div className={`${cssm.gameContainer} ${(gameState.numberOfCells === 24)?cssm.large:''}`}>
                 <div className={(gameState.numberOfCellsGuessed===gameState.numberOfCells/2)?cssm.win:cssm.hide}>
                     <h3 className={cssm.h3}>Congratulations !!</h3><h3 className={cssm.h3}>Try the next level</h3>
                 </div>

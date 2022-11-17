@@ -41,7 +41,7 @@ const GamesReducer = createSlice({
             let pictures: string[] = [];//создаем массив картинок
             let halfPictures = [];
             for (let i = 0; i < action.payload[0] / 2; i++) {
-                halfPictures[i] = `https://picic.live/${action.payload[1]}/${i}.png`;
+                halfPictures[i] = `https://konotop.site/${action.payload[1]}/${i}.png`;
             }
             pictures = halfPictures.concat(halfPictures);
 

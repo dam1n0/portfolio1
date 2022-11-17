@@ -9,7 +9,7 @@ import CryptoContainer from "./modules/CryptoContainer/CryptoContainer";
 
 function App() {
     const [cookies, setCookie] = useCookies(["theme"])
-    const [themeMode, setMode] = useState(cookies.theme?cookies.theme:"light");
+    const [themeMode, setMode] = useState(cookies.theme?cookies.theme:"dark");
 
     function changeTheme (){
         if(themeMode === "dark"){
@@ -27,8 +27,8 @@ function App() {
             <div className={`wrapper ${themeMode}`}>
                 <SiteBar changeTheme={changeTheme} themeMode={themeMode}/>
                 <Routes>
-                    < Route path='/' element={<Profile />}/>
-                    < Route path='/ctypto' element={<CryptoContainer />}/>
+                    < Route path='/profile' element={<Profile />}/>
+                    < Route path='/ctypto' element={<CryptoContainer theme={themeMode}/>}/>
                     < Route path='/games' element={<Games />}/>
 
                 </Routes>

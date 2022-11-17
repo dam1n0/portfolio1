@@ -1,0 +1,35 @@
+.top {
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+}
+@media (max-width: 800px) {
+  .top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.top div {
+  display: inline-flex;
+  margin: 0 5px;
+}
+.top div p {
+  vertical-align: center;
+  margin: auto;
+}
+.height {
+  color: rgba(109, 190, 113, 0.8);
+}
+.down {
+  color: #be6d6d;
+}
+.noChange {
+  color: gainsboro;
+}
+.currencyImg {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 5px;
+}
+/*# sourceMappingURL=Cryptocurrency.module.css.map */

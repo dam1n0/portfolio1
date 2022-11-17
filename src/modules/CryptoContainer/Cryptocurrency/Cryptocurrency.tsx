@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
-import {closePriceWs, openPriceWs} from "../../API/WebSocketApi";
-import {useAppSelector, useAppDispatch} from "../../hooks";
+import {closePriceWs, openPriceWs} from "../../../API/WebSocketApi";
+import {useAppSelector, useAppDispatch} from "../../../hooks";
 import {
     currencyType,
     getCryptoPriceAPI,
-} from "../../redux/Cryptocurrency-reducer";
+} from "../../../redux/Cryptocurrency-reducer";
 import cssm from "./Cryptocurrency.module.css"
 import CryptoPrice from "./CryptoPrice/CryptoPrice";
 

@@ -1,9 +1,0 @@
-.main{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    grid-template-areas:
-    'a b';
-    padding: 20px 20px 10px 20px;
-    height: 86vh;
-}

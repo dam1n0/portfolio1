@@ -1,26 +1,33 @@
+@background: #4c4956;
+
 .menu {
-  background-color: #4c4956;
+  background-color: @background;
   text-align: center;
 }
+
 .menu ul {
   padding: 0;
   list-style-type: none;
   font-size: 1.2em;
 }
+
 .menu a {
   color: white;
   outline: none;
   text-decoration: none;
 }
+
 .menu .activeLink {
   color: #f6f255;
   font-size: 1.4em;
 }
+
 .toggleTheme {
   padding: 10px 15px;
   font-size: 1em;
   color: #cccccc;
 }
+
 .toggleButton {
   position: relative;
   display: inline-block;
@@ -37,30 +44,39 @@
   -moz-appearance: none;
   appearance: none;
   transition: 0.3s;
+
 }
+
 .toggleButton::after {
   content: "";
+
   display: inline-block;
   position: absolute;
   left: 1px;
   top: 1px;
+
   width: 21px;
   height: 21px;
   background-color: #2d213d;
   border-radius: 50%;
+
   transform: translateX(0);
   transition: 0.3s;
 }
+
 .toggleButton:checked::after {
   transform: translateX(calc(100% + 1px));
   background-color: #fff;
 }
+
 .toggleButton:checked {
   background-color: #2d213d;
 }
+
 .menuBtn {
   display: none;
 }
+
 @media screen and (max-width: 768px) {
   .menuBtn {
     display: inline-block;
@@ -71,6 +87,7 @@
     z-index: 200;
     overflow: hidden;
   }
+
   .menuBtn span {
     width: 40px;
     height: 2px;
@@ -81,12 +98,15 @@
     background-color: #222222;
     transition: all 0.5s;
   }
+
   .menuBtn span:nth-of-type(2) {
     top: calc(50% - 5px);
   }
+
   .menuBtn span:nth-of-type(3) {
     top: calc(50% + 5px);
   }
+
   .menu {
     position: fixed;
     z-index: 100;
@@ -95,27 +115,31 @@
     width: 100%;
     height: 100%;
     padding: 15px;
-    background: #4c4956;
+    background: @background;
     transform: translateY(-100%);
     transition: transform 0.5s;
     font-size: 2.5em;
   }
+
   .menu.active {
     transform: translateX(0);
   }
+
   .menu li {
     list-style-type: none;
   }
+
   .menuBtn.active span:nth-of-type(1) {
     display: none;
   }
+
   .menuBtn.active span:nth-of-type(2) {
     top: 50%;
     transform: translate(-50%, 0%) rotate(45deg);
   }
+
   .menuBtn.active span:nth-of-type(3) {
     top: 50%;
     transform: translate(-50%, 0%) rotate(-45deg);
   }
 }
-/*# sourceMappingURL=SiteBar.Module.css.map */

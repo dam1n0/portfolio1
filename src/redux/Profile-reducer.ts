@@ -60,7 +60,6 @@ let initialState: initialStateType = {
     hobbies: null
 }
 
-
 const ProfileReducer = createSlice({
     name: 'profile',
     initialState,
