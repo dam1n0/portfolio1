@@ -9,13 +9,19 @@ const Games: React.FC = () => {
 
        useEffect(() => {
            dispatch(setPhoto([gameState.numberOfCells, gameState.chapter]))
-       }, [gameState.numberOfCells, gameState.chapter])
+       }, [gameState.numberOfCells, gameState.chapter]);
+
+    const [disableClick, setDisableClick] = useState(false);
 
     const clickHandler = (key: number) => {
-           dispatch(checkAnswer(key));
+        if(!disableClick) {
+            dispatch(checkAnswer(key));
+            setDisableClick(true);
             setTimeout(() => {
-                dispatch(checkAnswerSideEffect(key))
-            },270)
+                dispatch(checkAnswerSideEffect(key));
+                setDisableClick(false);
+            }, 270)
+        }
     }
 
     return (
@@ -44,17 +50,22 @@ const Games: React.FC = () => {
                 <div className={cssm.selectItem}><h4>Moves: {gameState.numberOfMoves}</h4></div>
             </div>
 
-            <div className={`${cssm.gameContainer} ${(gameState.numberOfCells === 24)?cssm.large:''}`}>
-                <div className={(gameState.numberOfCellsGuessed===gameState.numberOfCells/2)?cssm.win:cssm.hide}>
-                    <h3 className={cssm.h3}>Congratulations !!</h3><h3 className={cssm.h3}>Try the next level</h3>
+            <div className={`${cssm.gameContainer} ${(gameState.numberOfCells === 24) ? cssm.large : ''}`}>
+                <div
+                    className={(gameState.numberOfCellsGuessed === gameState.numberOfCells / 2) ? cssm.win : cssm.hide}>
+                    <h3 className={cssm.h3}>Congratulations</h3><h3 className={cssm.h3}>Try the next level</h3>
                 </div>
-                {gameState?.items.map((item) => (<div key={item.key} className={cssm.imgItem +' '+ (item.isGuessed?cssm.guessed:'')}><img className={
-                    (item.isOpen?cssm.open:cssm.close)
-                } src={item.src}
-                                onClick={e =>clickHandler(item.key)} alt="photo"/></div>))}
+                {gameState?.items.map((item) => (
+                    <div key={item.key} className={cssm.imgItem + ' ' + (item.isGuessed ? cssm.guessed : '')}><img
+                        className={(item.isOpen ? cssm.open : cssm.close)} src={item.src}
+                        onClick={()=> clickHandler(item.key)} alt="photo"/></div>))}
             </div>
-            <div><button className={cssm.playAgan} onClick={(e)=>{dispatch(setPhoto([gameState.numberOfCells, gameState.chapter]))}}>New game</button></div>
-
+            <div>
+                <button className={cssm.playAgan} onClick={(e) => {
+                    dispatch(setPhoto([gameState.numberOfCells, gameState.chapter]))
+                }}>New game
+                </button>
+            </div>
 
 
         </div>

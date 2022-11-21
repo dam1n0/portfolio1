@@ -21,7 +21,7 @@ const CryptoTrade: React.FC = () => {
 
     return (<div className={cssm.main}>
             <div className={cssm.ask}>
-                <h3>ASK</h3>
+                <h3 className={cssm.h3}>ASK</h3>
                 <ul className={cssm.line}>
                     <li className={cssm.span}>Price </li>
                     <li className={cssm.span}>Value</li>
@@ -39,7 +39,7 @@ const CryptoTrade: React.FC = () => {
             </div>
             </div>
             <div className={cssm.bid}>
-                <h3>BID</h3>
+                <h3 className={cssm.h3}>BID</h3>
                 <ul className={cssm.line}>
                     <li className={cssm.span}>Price</li>
                     <li className={cssm.span}>Value</li>

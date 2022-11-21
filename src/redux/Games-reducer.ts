@@ -47,7 +47,6 @@ const GamesReducer = createSlice({
 
             shuffleArray(pictures);
 
-//перемешать массив, Алгоритм Фишера-Йейса взятый из инета, не придумывал велосипед
             function shuffleArray(array: string[]) {
                 for (let i = array.length - 1; i > 0; i--) {
                     let j = Math.floor(Math.random() * (i + 1));
@@ -68,25 +67,13 @@ const GamesReducer = createSlice({
             state.items = items
         },
         checkAnswer(state, action: PayloadAction<number>) {
-            if (action.payload !== state.lastClickCell) {
+            if (action.payload !== state.lastClickCell && !state.items[action.payload].isGuessed) {
                 state.numberOfMoves++;
                 state.items[action.payload].isOpen = !state.items[action.payload].isOpen;
-                /*setTimeout(() => {
-                    if ((state.numberOfMoves % 2) === 0 && state.lastClickCell) {
-                        if (state.items[action.payload].src === state.items[state.lastClickCell].src) {
-                            state.items[action.payload].isGuessed = true;
-                            state.items[state.lastClickCell].isGuessed = true;
-                        } else {
-                            state.items[action.payload].isOpen = false;
-                            state.items[state.lastClickCell].isOpen = false;
-                        }
-                    }
-                else {state.lastClickCell = action.payload}
-                },3000)*/
             }
         },
         checkAnswerSideEffect(state, action: PayloadAction<number>){
-            if (action.payload !== state.lastClickCell) {
+            if (action.payload !== state.lastClickCell && !state.items[action.payload].isGuessed) {
                 if ((state.numberOfMoves % 2) === 0 && state.lastClickCell !== null) {
                     if (state.items[action.payload].src === state.items[state.lastClickCell].src) {
                         state.items[action.payload].isGuessed = true;

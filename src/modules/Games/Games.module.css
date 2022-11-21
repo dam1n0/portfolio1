@@ -1,5 +1,5 @@
 .main {
-  min-height: 100vh;
+  min-height: 96.6vh;
   padding: 1rem 0.5rem;
 }
 .selectContainer {
@@ -27,7 +27,7 @@
   /* наследует от родителя */
   font-size: 1rem;
   color: #fff;
-  background-color: #6d598d;
+  background-color: #201641;
 }
 .selectItem {
   display: inline-block;
@@ -65,7 +65,7 @@
 .imgItem {
   display: inline-block;
   background-image: url('https://picic.live/00.png');
-  border: 2px solid #6d598d;
+  border: 2px solid #201641;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -90,8 +90,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #f14f4f;
+  color: #fb3197;
   line-height: normal;
+  font-size: 2.5em;
 }
 .h3 {
   text-align: center;
@@ -102,10 +103,10 @@
   padding: 10px 15px;
   margin-bottom: 20px;
   outline: 0;
-  border: none;
+  border: 0.5px solid;
   border-radius: 5px;
   box-shadow: 0 4px 3px #242120;
-  background: #6d598d;
+  background: #201641;
   color: #fff;
   font-weight: 700;
   transition: background 0.3s;
