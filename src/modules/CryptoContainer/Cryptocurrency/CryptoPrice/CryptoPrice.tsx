@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef} from "react";
 import cssm from "../Cryptocurrency.module.css";
 
 type propsType = {
@@ -29,7 +29,7 @@ const CryptoPrice = (props: propsType) => {
     }, [props.value]);
 
     return (<div>
-            <img className={cssm.currencyImg} src={`https://picic.live/img/${props.name}.png`}/>
+            <img className={cssm.currencyImg} src={`https://konotop.site/img/${props.name}.png`}/>
             <p className={trend.current.color}>{props.name}: {trend.current.oldPrice}</p>
         </div>
     )

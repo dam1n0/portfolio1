@@ -24,6 +24,7 @@
 }
 .main h3 {
   margin-bottom: 10px;
+  padding-top: 15px;
   font-size: 22px;
   font-weight: bolder;
 }
@@ -64,22 +65,19 @@
 .headerContacts {
   margin-top: 0.8em;
 }
-.leftPanel {
-  /* background-color: #a09bef*/
-}
 @media (min-width: 1200px) {
   .leftPanel {
     grid-area: c;
   }
-}
-.rightPanel {
-  /*background-color: #f6f255*/
 }
 @media (min-width: 1200px) {
   .rightPanel {
     grid-area: p;
     font-size: 15px;
   }
+}
+.rightPanel p {
+  line-height: 1.5em;
 }
 .leftBorder {
   border-left-style: solid;

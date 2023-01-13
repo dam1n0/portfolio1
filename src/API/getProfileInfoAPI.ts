@@ -12,6 +12,3 @@ export const profileApi = createApi({
 
 
 export const {useGetProfileInfoQuery} = profileApi
-
-
-//https://picic.live/profile.php?hight-skill=1

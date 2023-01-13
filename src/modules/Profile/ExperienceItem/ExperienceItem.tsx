@@ -9,7 +9,7 @@ export type propsType = {
     companyLocation: string
     projectName: string
     participation: string
-    experience: string
+    experience: string[]
 }
 
 
@@ -21,8 +21,10 @@ const ExperienceItem = (item: propsType) => {
                 <h4 className={cssm.jobPosition}>{item.jobPosition}</h4>
                 <p><b>{item.companyName}</b><span> <GoLocation/> {item.companyLocation}</span></p>
                 <h4><b>Project: </b>{item.projectName}</h4>
-                <p><b>Participation: </b> {item.participation}</p>
-                <p><b>Experience: </b> {item.experience}</p>
+                <p><b>Description: </b> {item.participation}</p>
+                <p><b>Activities: </b> <ul>{item.experience?.map((item:string)=>(<li key={item}>{item}</li>))}</ul>
+
+                </p>
             </div>
         </div>
 

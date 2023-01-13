@@ -1,0 +1,90 @@
+{
+  "userMainInfo": {
+    "userName": "KONOTOP MICHAEL",
+    "jobPosition": "Junior Front-End Developer",
+    "geoLocation": "Kharkiv, Ukraine",
+    "phone": "+38(066)0695666",
+    "email": "criminalist.mickail@gmail.com",
+    "telegram": "@k0notop"
+  },
+  "Experience": [
+    {
+      "workPeriod": "2022 \u2013 now",
+      "jobPosition": "Integration manager / Technical support",
+      "companyName": "Freelance",
+      "companyLocation": "All world",
+      "projectName": "",
+      "participation": "Technical specialist, integrator",
+      "experience": [
+        "Server administration",
+        "Installation and configuration of trackers (keitaro, binom etc)",
+        "Creation and administration of a hosting. Purchase, connection of domains",
+        "Copying and creation of landing pages, their integration via API with the advertiser's systems (use PHP)",
+        "Cloaking (facebook and google validation bypass)"
+      ],
+      "technologies": "html\/css\/js php",
+      "environment": "Web Storm, Postman, FileZila, Adobe Photoshop, Trello, Keitaro."
+    },
+    {
+      "workPeriod": "2019 \u2013 2022",
+      "jobPosition": "Integration manager and after Product manager",
+      "companyName": "OLSEN STEINER LTD",
+      "companyLocation": "Vietnam",
+      "projectName": "CPA-IKON",
+      "participation": "Affiliate marketing system that works according to the CPA (\"cost per action\") standard. The system is focused on the Asian market. Built on microservice architecture. A tracker has been created for analytics and traffic distribution. Implemented interface for webmasters with deep statistics of clicks and orders, automatic calculation of payouts in 4 currencies. The system has flexible rights and roles for fine-tuning access to the system functions.",
+      "experience": [
+        "Writing technical specifications for the creation of a CPA marketing system",
+        "Building business processes",
+        "Managing core development departments (2-3 PHP developers, 1 tester). Following Scrum methodology",
+        "Establishing and managing Landing page development department (4 HTML development, 2 web-designers, 3 translators, 1 copywriter, 1 tester). Following  Kanban methodology",
+        "Managing integration and support department (1 integration manager). Following Kanban methodology",
+        "Creation of scripts for moderation, analytics and traffic redistribution on Landing pages",
+        "GitLab repository support for over 1.5k landing page",
+        "Project documentation support",
+        "Manual system testing",
+        "Collaboration with the team on the identification of technical solutions"
+      ],
+      "technologies": "JavaScript, PHP",
+      "environment": "Figma, Photoshop, Custom CRM, HTML, CSS, GitLab, Jira, Trello"
+    },
+    {
+      "workPeriod": "2015-2019",
+      "jobPosition": "Integration department manager",
+      "companyName": "AB Cloud Group LTD",
+      "companyLocation": "Moscow",
+      "projectName": "CPA kma.biz",
+      "participation": "Affiliate marketing system that works according to the CPA (\"cost per action\") standard. The second largest CPA system in the post-CIS space. Clients are more than 200k webmasters and about 1k advertisers.",
+      "experience": [
+        "Adding and configuring products",
+        "Adding landing pages per products",
+        "HTML development",
+        "Studying API documentation of the seller and setting the task for the integration of the back-end developer",
+        "Testing the integration of the product with the seller"
+      ],
+      "technologies": "JavaScript.",
+      "environment": "Custom CRM, Postman, HTML, CSS, jQuery, Photoshop, Trello."
+    }
+  ],
+  "summary": [
+    "7 years of professional experience in the Information Technology industry",
+    "Knowledge JavaScript/TypeScript development and related technologies",
+    "Knowledge frameworks React JS, Redux;",
+    "Experience in solving problems in all phases of web development",
+    "Management skills"
+  ],
+  "education": {
+    "educationPeriod": "2006-2012",
+    "educationLocation": "Kharkiv, Ukraine",
+    "educationPosition": "Applied materials science",
+    "educationCompany": {
+      "educationCompanyName": "National Technical University \u00abKharkiv Polytechnic Institute\u00bb",
+      "educationCompanyUrl": "https:\/\/www.kpi.kharkov.ua\/eng\/"
+    }
+  },
+  "technicalSkills": ["html", "css\/less", "JavaScript", "TypeScript", "ReactJS", "Redux\/toolkit", "webpack", "RestAPI", "php", "git"],
+  "languages": [{"languageName": "English", "languageLevel": "Pre-Intermediate"}, {"languageName": "Ukrainian", "languageLevel": "native"}, {"languageName": "Russian", "languageLevel": "native"}],
+  "hobbies": [{"hobbyName": "Football", "hobbyPhoto": "string"}, {
+    "hobbyName": "Cycling",
+    "hobbyPhoto": "string"
+  }, {"hobbyName": "Dancing", "hobbyPhoto": "string"}, {"hobbyName": "Travel", "hobbyPhoto": "string"}]
+}

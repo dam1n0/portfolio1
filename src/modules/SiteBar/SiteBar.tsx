@@ -19,8 +19,6 @@ const SiteBar = (props: propsType) => {
             </div>
             <nav onClick={() => setOpenMenu(!openMenu)} className={`${cssm.menu} ${openMenu ? cssm.active : ''}`}>
                 <ul>
-                    {/*<li><NavLink to='/profile'
-                                 className={({isActive}) => (isActive ? cssm.activeLink : "")}>Profile</NavLink></li>*/}
                     <li><NavLink to='/' end
                                  className={({isActive}) => (isActive ? cssm.activeLink : "")}>Profile</NavLink></li>
 
